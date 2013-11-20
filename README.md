@@ -3,7 +3,9 @@ inkscape-grids
 
 Triangular and perspective grid creation extensions for inkscape
 
-=Usage:
+Usage
+-----
+
 
 Copy the *.inx and *.py files in to your Inkscape extensions directory (usually ~/.configure/inkscape/extensions).
 
