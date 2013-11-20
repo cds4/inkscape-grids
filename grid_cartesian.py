@@ -146,7 +146,7 @@ class Grid_Cartesian(inkex.Effect):
         self.OptionParser.add_option("--y_subdivs_th",
                         action="store", type="float", 
                         dest="y_subdivs_th", default=1,
-                        help="Subminor Y Division Line thickness")
+                        help="Minor Y Division Line thickness")
         self.OptionParser.add_option("--y_subsubdivs_col",
                         action="store", type="int",
                         dest="y_subsubdivs_col",
