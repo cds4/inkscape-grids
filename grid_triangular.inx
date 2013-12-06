@@ -13,7 +13,7 @@
           <_option value="mm">millimeters</_option>
           <_option value="in">inches</_option>
         </param>
-        <param name="dm"              type="float"   min="1" max="1000" _gui-text="Major grid division Spacing">100.0</param>
+        <param name="dm"              type="float"   min="1" max="1000" precision="2" _gui-text="Major grid division Spacing">100.00</param>
         <param name="y_divs"          type="int"     min="1" max="1000" _gui-text="Major vertical divisions">6</param>
         <param name="x_divs"          type="int"     min="1" max="1000" _gui-text="Major horizontal divisions">6</param>
         <param name="grid_angle"       type="float"   min="0" max="180" _gui-text="Grid angle  [deg]">120</param>
