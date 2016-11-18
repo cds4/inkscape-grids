@@ -7,7 +7,10 @@ Usage
 -----
 
 
-Copy the *.inx and *.py files in to your Inkscape extensions directory (usually ~/.configure/inkscape/extensions).
+Copy the *.inx and *.py files in to your Inkscape extensions directory (usually ~/.configure/inkscape/extensions).  The actual directory can be found under Preferences/System/User preferences.
+
+Note: on my Mac (OSX Mountain Lion 10.8.5) the Inkscape extensions directory is
+~/.config/inkscape/extensions
 
 Restart inkscape.
 
