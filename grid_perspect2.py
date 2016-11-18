@@ -178,11 +178,11 @@ class Grid_Perspective(inkex.Effect):
     def effect(self):
         
         #find the pixel dimensions of the overall grid
-        self.ymax = inkex.unittouu(str(self.options.height)+self.options.size_unit)
-        self.xmax = inkex.unittouu(str(self.options.width)+self.options.size_unit)
-        self.horizon = inkex.unittouu(str(self.options.horizon)+self.options.size_unit)
-        self.left_x = inkex.unittouu(str(self.options.left_x)+self.options.size_unit)
-        self.right_x = inkex.unittouu(str(self.options.right_x)+self.options.size_unit)
+        self.ymax = self.unittouu(str(self.options.height)+self.options.size_unit)
+        self.xmax = self.unittouu(str(self.options.width)+self.options.size_unit)
+        self.horizon = self.unittouu(str(self.options.horizon)+self.options.size_unit)
+        self.left_x = self.unittouu(str(self.options.left_x)+self.options.size_unit)
+        self.right_x = self.unittouu(str(self.options.right_x)+self.options.size_unit)
        
 
         # Embed grid in group

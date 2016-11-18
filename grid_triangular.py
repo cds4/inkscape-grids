@@ -189,7 +189,7 @@ class Grid_Triangular(inkex.Effect):
     def effect(self):
         
         #find the pixel dimensions of the overall grid
-        dm = inkex.unittouu(str(self.options.dm) + self.options.size_unit)
+        dm = self.unittouu(str(self.options.dm) + self.options.size_unit)
         self.ymax = dm * self.options.y_divs #grid spacing defined along vertical
 	dx = dm / (2.0 * tan(radians(self.options.grid_angle)))
         self.xmax = dx * self.options.x_divs

@@ -168,8 +168,8 @@ class Grid_Cartesian(inkex.Effect):
     def effect(self):
         
         #find the pixel dimensions of the overall grid
-        self.dy = inkex.unittouu(str(self.options.dx)+self.options.size_unit)
-        self.dx = inkex.unittouu(str(self.options.dy)+self.options.size_unit)
+        self.dy = self.unittouu(str(self.options.dx)+self.options.size_unit)
+        self.dx = self.unittouu(str(self.options.dy)+self.options.size_unit)
         ymax = self.dy * self.options.y_divs
         xmax = self.dx * self.options.x_divs
         
