@@ -1,4 +1,4 @@
-#!/usr/bin/env python 
+#!/usr/bin/env python3
 '''
 Copyright (C) 2013 Carl Sorensen carl.d.sorensen@gmail.com
 Derived from grid_cartesian.py copyright (C) 2007 John Beard john.j.beard@gmail.com
@@ -26,7 +26,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 '''
 
 import inkex
-import simplestyle, sys
 from math import *
 from lxml import etree
 
@@ -53,46 +52,16 @@ def colorString(pickerColor):
 class Grid_Perspective(inkex.Effect):
     def __init__(self):
         inkex.Effect.__init__(self)
-        self.arg_parser.add_argument("--size_unit",
-                        action="store", type=str, 
-                        dest="size_unit", default="",
-                        help="Units for geometry")
-        self.arg_parser.add_argument("--width",
-                        action="store", type=int, 
-                        dest="width", default=500,
-                        help="Width of grid window")
-        self.arg_parser.add_argument("--height",
-                        action="store", type=int, 
-                        dest="height", default=300,
-                        help="Height of grid window")
-        self.arg_parser.add_argument("--p_divs",
-                        action="store", type=int, 
-                        dest="p_divs", default=10,
-                        help="Number of divisions in perspective angle")
-        self.arg_parser.add_argument("--horizon",
-                        action="store", type=float, 
-                        dest="horizon", default=150,
-                        help="Y coordinate of horizon")
-        self.arg_parser.add_argument("--left_x",
-                        action="store", type=float, 
-                        dest="left_x", default=-250,
-                        help="X coordinate of left perspective point")
-        self.arg_parser.add_argument("--right_x",
-                        action="store", type=float, 
-                        dest="right_x", default=750,
-                        help="X coordinate of right perspective point")
-        self.arg_parser.add_argument("--div_th",
-                        action="store", type=float, 
-                        dest="div_th", default=2,
-                        help="Grid division line thickness")
-        self.arg_parser.add_argument("--div_color",
-                        action="store", type=int, 
-                        dest="div_color", 
-                        help="Grid division line color")
-        self.arg_parser.add_argument("--border_th",
-                        action="store", type=float, 
-                        dest="border_th", default=3,
-                        help="Border Line thickness")
+        self.arg_parser.add_argument("--size_unit", default="", help="Units for geometry")
+        self.arg_parser.add_argument("--width", type=int, default=500, help="Width of grid window")
+        self.arg_parser.add_argument("--height", type=int, default=300, help="Height of grid window")
+        self.arg_parser.add_argument("--p_divs", type=int,  default=10, help="Number of divisions in perspective angle")
+        self.arg_parser.add_argument("--horizon", type=float, default=150, help="Y coordinate of horizon")
+        self.arg_parser.add_argument("--left_x", type=float, default=-250, help="X coordinate of left perspective point")
+        self.arg_parser.add_argument("--right_x", type=float, default=750, help="X coordinate of right perspective point")
+        self.arg_parser.add_argument("--div_th", type=float, default=2, help="Grid division line thickness")
+        self.arg_parser.add_argument("--div_color", type=int, help="Grid division line color")
+        self.arg_parser.add_argument("--border_th", type=float, default=3, help="Border Line thickness")
 
     def EdgePoints(self,x0, y0, theta):
         #  find the intersection points of the line with the extended
@@ -297,8 +266,5 @@ class Grid_Perspective(inkex.Effect):
                           colorString(self.options.div_color),
                           'VerticalDiv'+str(i), gv)
 
-
-
 if __name__ == '__main__':
-    e = Grid_Perspective()
-    e.run()
+    Grid_Perspective().run()
