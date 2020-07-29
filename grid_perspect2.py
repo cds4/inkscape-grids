@@ -44,11 +44,13 @@ def draw_SVG_rect(x,y,w,h, width, stroke, fill, name, parent):
     etree.SubElement(parent, inkex.addNS('rect','svg'), rect_attribs )
 
 def colorString(pickerColor):
+
     longcolor = int(pickerColor)
     if longcolor < 0:
         longcolor = longcolor & 0xFFFFFFFF
     return '#' + format(longcolor >> 8, '06X')
 	
+
 class Grid_Perspective(inkex.Effect):
     def __init__(self):
         inkex.Effect.__init__(self)

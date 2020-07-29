@@ -44,10 +44,8 @@ def draw_SVG_rect(x,y,w,h, width, stroke, fill, name, parent):
     inkex.etree.SubElement(parent, inkex.addNS('rect','svg'), rect_attribs )
 
 def colorString(pickerColor):
-    longcolor = long(pickerColor)
-    if longcolor < 0:
-        longcolor = longcolor & 0xFFFFFFFF
-    return '#' + format(longcolor/256, '06X')
+    longcolor = int(pickerColor) & 0xFFFFFF00
+    return '#' + format(longcolor >> 8, '06X')
 
 
 class Grid_Triangular(inkex.Effect):
